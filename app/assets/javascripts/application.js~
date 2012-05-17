@@ -18,8 +18,8 @@
 //= require wmd/showdown
 //
 
-$(document).ready(function(){	
-
+$(document).ready(function(){
+	alert("can you");
   new WMDEditor({
     input: "wmd-input",
     button_bar: "wmd-button-bar",

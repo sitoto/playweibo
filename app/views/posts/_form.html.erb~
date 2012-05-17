@@ -1,0 +1,25 @@
+<%= form_for @post, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :title, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :title, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :description, :class => 'control-label' %>
+    <div id="wmd-button-bar" class="wmd-panel"></div>
+    <div class="controls">
+      <%= f.text_area :description, :id => 'wmd-input', :class => 'wmd-panel' %>
+    </div>
+     <div id="wmd-preview" class="wmd-panel"></div>
+     <br />
+     <div id="wmd-output" class="wmd-panel"></div>
+
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                posts_path, :class => 'btn' %>
+  </div>
+<% end %>

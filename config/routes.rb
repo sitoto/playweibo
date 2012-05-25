@@ -1,4 +1,6 @@
 Playweibo::Application.routes.draw do
+  get "testcaijiengine/gpl"
+
   resources :posts
 
   # The priority is based upon order of creation:

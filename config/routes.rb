@@ -1,4 +1,9 @@
 Playweibo::Application.routes.draw do
+
+
+  devise_for :users
+  resources :users, :only => [:index, :show]
+
   resources :posts
 
   # The priority is based upon order of creation:

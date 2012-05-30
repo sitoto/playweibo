@@ -1,5 +1,3 @@
-require Rails.root + 'app/helpers/caiji_engine/base.rb'
-
 class TestcaijiengineController < ApplicationController
   def gpl
     @return = CaijiEngine::Base.get_page_list(params[:content_name])

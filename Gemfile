@@ -45,6 +45,7 @@ gem 'wmd-rails'
 gem 'redis-namespace', '~> 1.0.2'
 
 # redis
+gem 'redis-store', '~> 1.0.0'
 gem 'redis-objects', '0.5.2'
 
 #for ubuntu javascript runtime

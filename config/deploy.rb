@@ -12,9 +12,9 @@ set :scm,	  "git"
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 set :user,	  "app"
 set :runner,	  "app"
-set :keep_releases, 5
+set :keep_release, 5
 
-set :deploy_to	  "/home/#{user}/www/#{application}"
+set :deploy_to,	  "/home/#{user}/www/#{application}"
 
 role :web, domain           # Your HTTP server, Apache/etc
 role :app, domain          # This may be the same as your `Web` server

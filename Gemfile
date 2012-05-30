@@ -69,11 +69,10 @@ gem 'omniauth'
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
 
-# Use unicorn as the app server
-# gem 'unicorn'
-
+# Use passenger nas the app server
+  gem 'passenger'
 # Deploy with Capistrano
- gem 'capistrano'
+  gem 'capistrano'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'

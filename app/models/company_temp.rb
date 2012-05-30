@@ -18,7 +18,7 @@ class CompanyTemp
 end
 
 class Contact
-  include Mongoid::Documet
+  include Mongoid::Document
 
   field :name, :type => String
   field :value, :type => String

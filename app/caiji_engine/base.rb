@@ -1,3 +1,5 @@
+load Rails.root + 'app/caiji_engine/caiji_config.rb'
+
 module CaijiEngine
   class Base
 

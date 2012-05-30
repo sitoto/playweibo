@@ -1,5 +1,5 @@
-load Rails.root + 'app/helpers/caiji_engine/caiji_51job.rb'
-load Rails.root + 'app/helpers/caiji_engine/caiji_sinaweibo.rb'
+load Rails.root + 'app/caiji_engine/caiji_51job.rb'
+load Rails.root + 'app/caiji_engine/caiji_sinaweibo.rb'
 
 module CaijiEngine
 	CONFIG = 

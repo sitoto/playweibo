@@ -29,6 +29,15 @@ gem 'jquery-rails'
 gem 'mongoid', '~> 2.4'
 gem 'bson_ext', '~> 1.5'
 
+# Rails authentication
+gem 'devise'
+
+# 
+gem 'cancan'
+
+# User roles
+gem 'rolify'
+
 #wmd Editor
 gem 'wmd-rails'
 
@@ -50,6 +59,9 @@ gem 'resque_mailer', '2.0.2'
 #Twitter Bootstrap
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 
+#
+gem 'omniauth'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -60,7 +72,7 @@ gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootst
 # gem 'unicorn'
 
 # Deploy with Capistrano
-# gem 'capistrano'
+ gem 'capistrano'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'

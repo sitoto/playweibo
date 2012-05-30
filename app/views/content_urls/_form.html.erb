@@ -1,0 +1,25 @@
+<%= form_for(@content_url) do |f| %>
+  <% if @content_url.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@content_url.errors.count, "error") %> prohibited this content_url from being saved:</h2>
+
+      <ul>
+      <% @content_url.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :weburl , "内容页网址"%>
+    <%= f.text_field :weburl, style: 'width:400px' %>
+  </div>
+  <div class="field">
+    <%= f.label :status , "设置状态为1，则立即采集,采集完后，查看企业名录。"%>
+    <%= f.number_field :status %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

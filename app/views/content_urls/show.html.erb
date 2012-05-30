@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Url:</b>
+  <%= @content_url.weburl %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @content_url.status %>
+</p>
+
+
+<%= link_to 'Edit', edit_content_url_path(@content_url) %> |
+<%= link_to 'Back', content_urls_path %>

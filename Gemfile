@@ -24,6 +24,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'nokogiri'
 
 #MongoDB client
 gem 'mongoid', '~> 2.4'

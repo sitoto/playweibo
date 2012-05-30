@@ -5,7 +5,7 @@ class User
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
   
-  rolify
+#  rolify
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable

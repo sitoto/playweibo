@@ -1,4 +1,4 @@
-require Rails.root + 'app/helpers/caiji_engine/base.rb'
+require Rails.root + 'app/caiji_engine/base.rb'
 
 class TestcaijiengineController < ApplicationController
   def gpl

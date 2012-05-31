@@ -25,7 +25,7 @@
   <dt><strong><%= model_class.human_attribute_name(:location) %>:</strong></dt>
   <dd><%= @company.location %></dd>
   <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
-  <dd><%= @company.description %></dd>
+  <dd><%=raw @company.description %></dd>
 </dl>
 
 <div class="form-actions">

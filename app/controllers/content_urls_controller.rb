@@ -1,6 +1,7 @@
 #encoding: utf-8
 require 'nokogiri'
 require 'open-uri'
+require 'iconv'
 
 class ContentUrlsController < ApplicationController
   layout "spider"
@@ -120,12 +121,21 @@ class ContentUrlsController < ApplicationController
 	t[:fax] = item.text.strip.split(/：/)[1]
       end
     end
-    description = doc.at_css("p.txt_font").text
+    description = doc.at_css("p.txt_font").inner_html
+    description = safe_iconv(description.to_s)
+
     t[:description] = description 
     
     @company = Company.new
     @company.update_attributes(t)
     @company.save!
    end
+  def safe_iconv(s)
+    begin
+      Iconv.conv('UTF-8','GB2312', s)
+    rescue
+      s
+    end
+  end
 
 end

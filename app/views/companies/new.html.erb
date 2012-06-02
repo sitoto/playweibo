@@ -2,5 +2,8 @@
 <div class="page-header">
   <h1><%=t '.title', :default => t('helpers.titles.new', :model => model_class.model_name.human,
                                  :default => "New #{model_class.model_name.human}") %></h1>
+  <p>
+  输入明细页的完整的网址（url），其它可以不填，然后保存。
+  </p>			       
 </div>
 <%= render :partial => 'form' %>

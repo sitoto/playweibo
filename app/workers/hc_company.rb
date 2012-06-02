@@ -3,8 +3,8 @@ require 'nokogiri'
 require 'open-uri'
 require 'iconv'
 
-class JobCompany
-  @queue = :job_queue
+class HcCompany
+  @queue = :hc_queue
 
   def self.perform(company_id)
     puts "1.Begin to get company's id: #{company_id}"
@@ -13,19 +13,15 @@ class JobCompany
 
     doc = Nokogiri::HTML(html_stream)
     t = {}
-    name = doc.at_css("td.sr_bt").text
-    name = name.gsub(/\查.+/, '').strip
+    name = doc.at_css("li.comName a").text
     t[:name] = name
-    
-    description = doc.at_css("p.txt_font").inner_html
+   
+    description = doc.at_css("div.cAbout").inner_html
+#    description = description.gsub(/\<div.+div>/, '')
     description = safe_iconv(description.to_s)
     t[:description] = description 
 
-    doc.css("p.txt_font1").each do |item|
-      if item.text.strip[0] == "地"
-        address = item.text.gsub(/\具.+/, '')
-	t[:address] = address.strip.split(/：/)[1]
-      end
+    doc.css("div.contactbox li").each do |item|
       if item.text.strip[0] == "电"
 	t[:telephone] = item.text.strip.split(/：/)[1]
       end
@@ -34,6 +30,16 @@ class JobCompany
       end
     end
 
+    doc.css("div.detailsinfo tr").each do |item|
+      if item.css("td")[2] && item.css("td")[2].text  == "经营地址："
+        address = item.css("td")[3].text
+	t[:address] = address
+      end
+      #其它信息（name：value)
+      #
+    end
+=begin   
+=end
     company.update_attributes(t)
   end
 
@@ -52,9 +58,5 @@ class JobCompany
       return ""
     end
   end
-
-
-
-
 end
 

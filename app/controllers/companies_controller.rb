@@ -51,7 +51,7 @@ class CompaniesController < ApplicationController
 
     respond_to do |format|
       if @company.save
-	Resque.enqueue(JobCompany, @company.id)
+	Manager.distribute(@company.url, @company.id)
 
         format.html { redirect_to @company, notice: 'Company was successfully created.' }
         format.json { render json: @company, status: :created, location: @company }

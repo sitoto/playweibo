@@ -49,13 +49,16 @@ class ContentUrlsController < ApplicationController
   def create
     @content_url = ContentUrl.new(params[:content_url])
     if @content_url.status == 1
-      caiji(@content_url.weburl)
+      
+     # caiji(@content_url.weburl)
     end
 
 
 
     respond_to do |format|
       if @content_url.save
+	Resque.enqueue(JobCompany, @content.id)
+
         format.html { redirect_to @content_url, notice: 'url was successfully created.查看企业目录，看是否有新增采集。' }
         format.json { render json: @content_url, status: :created, location: @content_url }
       else

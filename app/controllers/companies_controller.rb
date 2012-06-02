@@ -1,3 +1,8 @@
+#encoding: utf-8
+require 'nokogiri'
+require 'open-uri'
+require 'iconv'
+
 class CompaniesController < ApplicationController
   layout 'spider'
 
@@ -46,6 +51,8 @@ class CompaniesController < ApplicationController
 
     respond_to do |format|
       if @company.save
+	Resque.enqueue(JobCompany, @company.id)
+
         format.html { redirect_to @company, notice: 'Company was successfully created.' }
         format.json { render json: @company, status: :created, location: @company }
       else
@@ -82,4 +89,5 @@ class CompaniesController < ApplicationController
       format.json { head :no_content }
     end
   end
+   
 end

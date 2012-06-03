@@ -20,6 +20,9 @@ group :assets do
   # gem 'therubyracer', :platform => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+  gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+
+ 
 end
 
 gem 'jquery-rails'
@@ -58,8 +61,6 @@ gem 'resque', '~> 1.20.0', :require => 'resque/server'
 gem 'resque_mailer', '2.0.2'
 
 #Twitter Bootstrap
-gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
-
 #
 gem 'omniauth'
 

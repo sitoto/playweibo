@@ -11,7 +11,7 @@ set :branch,	  "master"
 set :scm,	  "git"
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 set :user,	  "app"
-set :runner,	  "app"
+#set :runner,	  "app"
 set :keep_release, 5
 
 set :deploy_to,	  "/home/#{user}/www/#{application}"

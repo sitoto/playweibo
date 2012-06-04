@@ -1,11 +1,12 @@
 class User
-  include ActiveModel::Validations
+  include Mongoid::Validations
   include Mongoid::Document
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
-  
-#  rolify
+
+  extend Rolify 
+  rolify
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable

@@ -4,6 +4,7 @@ require 'open-uri'
 require 'iconv'
 
 class CompaniesController < ApplicationController
+  before_filter :authenticate_user!, :except => [:show , :index]
   layout 'spider'
 
   # GET /companies

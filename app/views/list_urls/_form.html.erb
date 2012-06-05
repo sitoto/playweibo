@@ -1,0 +1,29 @@
+<%= form_for(@list_url) do |f| %>
+  <% if @list_url.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@list_url.errors.count, "error") %> prohibited this list_url from being saved:</h2>
+
+      <ul>
+      <% @list_url.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :weburl %><br />
+    <%= f.text_field :weburl %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br />
+    <%= f.number_field :status %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

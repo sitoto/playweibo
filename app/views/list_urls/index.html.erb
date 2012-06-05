@@ -1,0 +1,27 @@
+<h1>Listing list_urls</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Weburl</th>
+    <th>Status</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @list_urls.each do |list_url| %>
+  <tr>
+    <td><%= list_url.name %></td>
+    <td><%= list_url.weburl %></td>
+    <td><%= list_url.status %></td>
+    <td><%= link_to 'Show', list_url %></td>
+    <td><%= link_to 'Edit', edit_list_url_path(list_url) %></td>
+    <td><%= link_to 'Destroy', list_url, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New List url', new_list_url_path %>

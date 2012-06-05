@@ -8,5 +8,6 @@ class ContentUrl
 
   field :weburl, :type => String
   field :status, :type => Integer
+  field :name, :type => String
 
 end

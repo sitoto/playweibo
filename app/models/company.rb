@@ -14,6 +14,10 @@ class Company
   field :location, :type => String
   field :description, :type => String
 
+  def self.find_or_create(attributes)
+   Company.where(attributes).first || Company.create(attributes)
+  end
+
   embeds_many :contacts
 end
 

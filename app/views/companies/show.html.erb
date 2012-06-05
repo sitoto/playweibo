@@ -2,26 +2,34 @@
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human %></h1>
 </div>
-
 <dl class="dl-horizontal">
   <dt><strong><%= model_class.human_attribute_name(:_id) %>:</strong></dt>
   <dd><%= @company._id %></dd>
+<br />
   <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
   <dd><%= @company.name %></dd>
+<br />
   <dt><strong><%= model_class.human_attribute_name(:address) %>:</strong></dt>
   <dd><%= @company.address %></dd>
+<br />
   <dt><strong><%= model_class.human_attribute_name(:telephone) %>:</strong></dt>
   <dd><%= @company.telephone %></dd>
+<br />
   <dt><strong><%= model_class.human_attribute_name(:mobile) %>:</strong></dt>
   <dd><%= @company.mobile %></dd>
+<br />
   <dt><strong><%= model_class.human_attribute_name(:fax) %>:</strong></dt>
   <dd><%= @company.fax %></dd>
+<br />
   <dt><strong><%= model_class.human_attribute_name(:email) %>:</strong></dt>
   <dd><%= @company.email %></dd>
+<br />
   <dt><strong><%= model_class.human_attribute_name(:postcode) %>:</strong></dt>
   <dd><%= @company.postcode %></dd>
+<br />
   <dt><strong><%= model_class.human_attribute_name(:location) %>:</strong></dt>
   <dd><%= @company.location %></dd>
+<br />
   <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
   <dd><%=raw @company.description %></dd>
 </dl>

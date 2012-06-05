@@ -2,20 +2,24 @@
 
 <table>
   <tr>
+    <th>Name</th>
     <th>Url</th>
     <th>Status</th>
     <th></th>
     <th></th>
     <th></th>
+    <th>Submit</th>
   </tr>
 
 <% @content_urls.each do |content_url| %>
   <tr>
+    <td><%= content_url.name %></td>
     <td><%= content_url.weburl %></td>
     <td><%= content_url.status %></td>
     <td><%= link_to 'Show', content_url %></td>
     <td><%= link_to 'Edit', edit_content_url_path(content_url) %></td>
     <td><%= link_to 'Destroy', content_url, confirm: 'Are you sure?', method: :delete %></td>
+    <td>[<%= link_to '采集', cai_content_url_path(content_url.id), method: :put %>]</td>
   </tr>
 <% end %>
 </table>

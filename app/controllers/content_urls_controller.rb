@@ -95,4 +95,11 @@ class ContentUrlsController < ApplicationController
     end
   end
  
+  def cai
+    @content_url = ContentUrl.find(params[:id])
+    @company = Company.find_or_create(:url => @content_url.weburl)
+    Manager.distribute(@company.url, @company.id)
+    
+    redirect_to '/companies'
+  end
 end

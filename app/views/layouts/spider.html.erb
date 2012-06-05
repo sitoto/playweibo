@@ -35,6 +35,7 @@
 	      <li><%= link_to "企业名录", companies_path  %></li>
               <li><%= link_to "最新动态", posts_path  %></li>
 	      <li><%= link_to "网址列表", content_urls_path %></li>
+	      <li><%= link_to "列表页", list_urls_path %></li>
 	      <% if user_signed_in? %>
 		<li>
 		<%= link_to  current_user.email, user_path(current_user) %>

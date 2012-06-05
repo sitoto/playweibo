@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @list_url.name %>
+</p>
+
+<p>
+  <b>Weburl:</b>
+  <%= @list_url.weburl %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @list_url.status %>
+</p>
+
+
+<%= link_to 'Edit', edit_list_url_path(@list_url) %> |
+<%= link_to 'Back', list_urls_path %>

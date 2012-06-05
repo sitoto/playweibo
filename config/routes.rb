@@ -2,8 +2,12 @@ Playweibo::Application.routes.draw do
 
 
 
-  resources :content_urls
+  resources :list_urls
 
+  resources :content_urls do
+    put :cai, :on => :member
+  end
+  
   resources :companies
 
   devise_for :users

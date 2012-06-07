@@ -1,6 +1,7 @@
 class TestcaijiengineController < ApplicationController
   def gpl
-#    @return = CaijiEngine::Base.get_page_list(params[:content_name])
+    Resque.enqueue(JobWorker)
+    @return = "JobWorker enqueue"
 
     respond_to do |format|
       format.html # show.html.erb

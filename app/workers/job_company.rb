@@ -14,7 +14,7 @@ class JobCompany
     doc = Nokogiri::HTML(html_stream)
     t = {}
     name = doc.at_css("td.sr_bt").text
-    name = name.gsub(/\查.+/, '').strip
+    #name = name.gsub(/\查.+/, '').strip
     t[:name] = name
     
     description = doc.at_css("p.txt_font").inner_html
@@ -23,7 +23,7 @@ class JobCompany
 
     doc.css("p.txt_font1").each do |item|
       if item.text.strip[0] == "地"
-        address = item.text.gsub(/\具.+/, '')
+        #address = item.text.gsub(/\具.+/, '')
 	t[:address] = address.strip.split(/：/)[1]
       end
       if item.text.strip[0] == "电"

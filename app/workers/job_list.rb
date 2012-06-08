@@ -1,7 +1,6 @@
 #encoding: utf-8
 require 'nokogiri'
 require 'open-uri'
-require 'iconv'
 
 class JobList
   @queue = :job_list
@@ -11,16 +10,10 @@ class JobList
     list = ListUrl.find(list_url_id)
 
     html_stream = safe_gethtml(list.weburl)
-open(list.weburl) {|f|
-  f.each_line {|line| p line}
-  p f.base_uri         # <URI::HTTP:0x40e6ef2 URL:http://www.ruby-lang.org/en/>
-  p f.content_type     # "text/html"
-  p f.charset          # "iso-8859-1"
-  p f.content_encoding # []
-  p f.last_modified    # Thu Dec 05 02:45:02 UTC 2002
-}
-
-    doc = Nokogiri::HTML(html_stream)
+    html2 = html_stream.read
+    html2.encode!("utf-8", "gbk")
+   
+    doc = Nokogiri::HTML(html2)
     puts doc.at_css("title").text
     #puts doc.at_css("a.coname").text
 
@@ -39,13 +32,6 @@ open(list.weburl) {|f|
     end
   end
 
-  def self.safe_iconv(s)
-    begin
-      Iconv.conv('UTF-8','GB2312', s)
-    rescue
-      s
-    end
-  end
   def self.safe_gethtml(url)
     begin
       html_stream = open(url)

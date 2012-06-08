@@ -1,7 +1,7 @@
-require 'test_helper'
+require 'test/unit'  
 
-class ListUrlTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+class ListUrlTest < Test::Unit::TestCase
+   test "the truth" do
+     assert true
+   end
 end

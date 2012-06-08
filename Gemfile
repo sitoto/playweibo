@@ -60,10 +60,13 @@ gem 'therubyracer', :platforms => :ruby
 gem 'resque', '~> 1.20.0', :require => 'resque/server'
 gem 'resque_mailer', '2.0.2'
 
-#Twitter Bootstrap
 #
 gem 'omniauth'
 
+group :development, :test do
+ gem 'capistrano'
+ gem 'rspec-rails', '~> 2.0'
+end
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -72,8 +75,6 @@ gem 'omniauth'
 
 # Use passenger nas the app server
   gem 'passenger'
-# Deploy with Capistrano
-  gem 'capistrano'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'

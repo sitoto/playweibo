@@ -1,0 +1,9 @@
+<% if !@companies.blank? %>
+<h1>最近加入</h1>
+<ul>
+  <% @companies.each do |item| %>
+    <li><%= item.name %></li>
+  <% end%>
+</ul>
+<% end %>
+<p>Find me in app/views/cpanel/home/index.html.erb</p>

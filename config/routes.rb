@@ -1,6 +1,9 @@
 Playweibo::Application.routes.draw do
 
 
+  namespace :cpanel do
+    root :to => "home#index"
+  end
 
   resources :list_urls
 

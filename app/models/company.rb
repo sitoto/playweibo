@@ -14,6 +14,10 @@ class Company
   field :location, :type => String
   field :description, :type => String
 
+  #scopes
+  default_scope :order => "id desc"
+  scope :recent, desc(:created_at)
+
   def self.find_or_create(attributes)
    Company.where(attributes).first || Company.create(attributes)
   end

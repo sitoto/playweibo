@@ -6,10 +6,15 @@
   <div class="main">
     <% @companies.each do |company| %>
       <ul>
-        <li><%= link_to company.name, company_path(company) %></li>
-        <li><%= company.address %></li>
-        <li><%= company.telephone %></li>
+        <li>公司：<%= link_to company.name, company_path(company) %></li>
+        <li>地址：<%= company.address %></li>
+        <li>电话：<%= company.telephone %></li>
+	<li>来源：<%= company.url %></li>
+	<li>更新：<%= company.created_at %> </li>
+
+	<li>介绍：<%= company.description.truncate(120) %></li>
       </ul>
+      <hr>
     <% end %>
   </div>
 </div>

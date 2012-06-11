@@ -14,21 +14,15 @@ class JobList
     html2.encode!("utf-8", "gbk")
    
     doc = Nokogiri::HTML(html2)
-    puts doc.at_css("title").text
-    #puts doc.at_css("a.coname").text
-
-    doc.css("td.td2").each do |item|
-      puts item.text
-      #if item.at_css("td.td2 a")
-        url = item.at_css("a").attr("href")
-	name = item.at_css("a").text
-	t = {}
-	t[:weburl] = url
-	t[:name] = name
+    doc.css('td.td2 a.coname').map.each do |item|
+      company_name = '' + item.text
+      company_url = item['href']
+      t = {}      
+      t[:name] = company_name
+      t[:weburl] = company_url
 	content_url = ContentUrl.new
         content_url.update_attributes(t)
  
-#      end
     end
   end
 
@@ -40,9 +34,6 @@ class JobList
       return ""
     end
   end
-
-
-
 
 end
 

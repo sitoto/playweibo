@@ -20,6 +20,8 @@ Playweibo::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = true
 
+  config.assets.js_compressor  = :uglifier
+  config.assets.css_compressor = :scss
   # Defaults to Rails.root.join("public/assets")
   # config.assets.manifest = YOUR_PATH
 
@@ -47,7 +49,7 @@ Playweibo::Application.configure do
   # config.action_controller.asset_host = "http://assets.example.com"
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
-  # config.assets.precompile += %w( search.js )
+#  config.assets.precompile += %w(application.css, companies.css, search.js )
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false

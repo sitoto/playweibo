@@ -4,7 +4,7 @@ require 'open-uri'
 
 class CompaniesController < ApplicationController
   #before_filter :authenticate_user!, :except => [:show , :index]
-  layout 'spider'
+  layout 'front'
 
   # GET /companies
   # GET /companies.json

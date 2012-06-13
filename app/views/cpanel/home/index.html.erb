@@ -1,9 +1,34 @@
-<% if !@companies.blank? %>
-<h1>最近加入</h1>
-<ul>
-  <% @companies.each do |item| %>
-    <li><%= item.name %></li>
-  <% end%>
-</ul>
-<% end %>
-<p>Find me in app/views/cpanel/home/index.html.erb</p>
+<div class="content">
+	<div class="row">
+		<div class="span3 well">
+			<h2>我的客户</h2>
+			<ul>
+				<li><a>全部</a></li>
+				<li><a>vip客户</a></li>
+				<li><a>潜在客户</a></li>
+			</ul>
+			<h2>寻找客户</h2>
+			<ul>
+				<li><a>全部</a></li>
+				<li><a>我附近的</a></li>
+				<li><a>最匹配的</a></li>
+				<li><a>国企</a></li>
+				<li><a>活跃的企业</a></li>
+			</ul>
+		</div>
+		<div class="span8 well">
+			<% if !@companies.blank? %>
+			<h1>我的客户</h1>
+
+			<hr>
+			<ol>
+			<% @companies.each do |item| %>
+				<li><%= item.name %> <br/> 联系电话：<%= item.telephone %> </li>
+			<% end%>
+			</ol>
+			<% end %>
+		</div>
+		</div><!--/span-->
+</div><!--/row-->
+</div><!--/content-->
+

@@ -15,7 +15,7 @@ end
 
 module Playweibo
   class Application < Rails::Application
-    config.autoload_paths += %W(#{config.root}/lib)
+    config.autoload_paths += %W(#{config.root}/lib #{config.root}/app/workers/wyjob)
     
     config.time_zone = 'Beijing'
     

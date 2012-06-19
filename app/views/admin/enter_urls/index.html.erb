@@ -1,0 +1,43 @@
+<h1>采集任务 入口管理 </h1>
+<br/>
+
+<br>
+<fieldset>
+<legend>前程无忧-企业名录采集</legend>
+<h3>启动任务</h3>
+<table width="600" border = 1>
+	<tr><th>Tasks</th><th>DO</th></tr>
+	<tr>
+		<td>51job</td><td><a>采集列表页</a></td>
+	</tr>
+	<tr>
+		<td>51job</td><td><a>采集明细页</a></td>
+	</tr>
+</table>
+<h3>入口地址配置列表</h3>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Url</th>
+    <th>Status</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @admin_enter_urls.each do |admin_enter_url| %>
+  <tr>
+    <td><%= admin_enter_url.name %></td>
+    <td><%= admin_enter_url.url %></td>
+    <td><%= admin_enter_url.status %></td>
+    <td><%= link_to 'Show', admin_enter_url %></td>
+    <td><%= link_to 'Edit', edit_admin_enter_url_path(admin_enter_url) %></td>
+    <td><%= link_to 'Destroy', admin_enter_url, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+</fieldset>
+<br />
+
+<%= link_to 'New Enter url', new_admin_enter_url_path %>
+

@@ -1,0 +1,29 @@
+<%= form_for(@admin_enter_url) do |f| %>
+  <% if @admin_enter_url.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@admin_enter_url.errors.count, "error") %> prohibited this admin_enter_url from being saved:</h2>
+
+      <ul>
+      <% @admin_enter_url.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :url %><br />
+    <%= f.text_field :url %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br />
+    <%= f.number_field :status %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

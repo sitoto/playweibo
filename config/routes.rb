@@ -1,6 +1,13 @@
 Playweibo::Application.routes.draw do
 
 
+  namespace :admin do   
+		get "wyjob/index"
+	  get "wyjob/getlist"
+  	get "wyjob/getdetail"
+		resources :enter_urls 
+	end
+
   get "static_pages/home"
 
   get "static_pages/help"

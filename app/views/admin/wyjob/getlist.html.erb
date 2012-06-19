@@ -1,0 +1,10 @@
+<h1>Admin::51job#getlist</h1>
+<% if @url_lists &&  @url_lists.length >0 %>
+<table>
+	<% @url_lists.each_with_index do |u, i|%>
+		<tr>
+		<td><%= i %></td><td><%= u[:name] %></td><td><%= u[:url] %></td>
+		</tr>
+	<% end %>
+</table>
+<% end %>

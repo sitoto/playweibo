@@ -2,8 +2,13 @@
 require 'nokogiri'
 require 'open-uri'
 
-class JobList
+class JobListWorker
+	include JobCai	
   @queue = :job_list
+
+	def cai
+		cai_51job_list
+	end
 
   def self.perform(list_url_id)
     puts "list_url_id : #{list_url_id}"
@@ -36,4 +41,5 @@ class JobList
   end
 
 end
-
+#a  = JobList.new
+#a.get_enter_lists

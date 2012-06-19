@@ -3,7 +3,7 @@ require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'capybara/rspec'
 
-Dir[Rails.root.join("spec/support/**/*.rb", "lib/*.rb")].each {|f| require f}
+Dir[Rails.root.join("spec/support/**/*.rb", "lib/*.rb", "app/workers/**/*.rb")].each {|f| require f}
 
 RSpec.configure do |config|
 

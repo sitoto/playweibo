@@ -1,2 +1,14 @@
-<h1>Admin::51job#getdetail</h1>
+<h1>最近采集www.51job.com的公司资料</h1>
 <p>Find me in app/views/admin/51job/getdetail.html.erb</p>
+<% if @details && @details.length > 0 %>
+	<% @details.each do |d| %>
+		<p> <%= d.name %> <%= d.created_at %></p>
+		<p>
+			<% d.contacts.each do |c| %>
+				<%= c.name %>:<%= c.value %> <br />
+			<% end %>
+		</p>
+	<% end %>
+<% end %>
+<%= paginate @details, :out_window => 2, :inner_window => 2 %>
+

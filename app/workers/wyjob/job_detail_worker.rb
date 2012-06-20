@@ -3,7 +3,12 @@ require 'nokogiri'
 require 'open-uri'
 
 class JobDetailWorker
+	include JobCai
   @queue = :job_queue
+
+	def cai
+		cai_51job_detail
+	end
 
   def self.perform(company_id)
     puts "1.Begin to get company's id: #{company_id}"

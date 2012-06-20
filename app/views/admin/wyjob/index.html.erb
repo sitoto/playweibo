@@ -1,2 +1,16 @@
-<h1>Admin::51job#index</h1>
-<p>Find me in app/views/admin/51job/index.html.erb</p>
+<h1>采集管理：www.51job.com</h1>
+待采集的 51job.com 的企业名录：<%= @job_list_num %>/<%= @job_list_all_num %>
+<hr>
+<p>
+<%= link_to "查看采集的网址", admin_wyjob_getlist_path, class: "btn", target: "_blank" %>
+<%= link_to "查看采集的企业名录", admin_wyjob_getdetail_path, class: "btn", target: "_blank" %>
+</p>
+
+<br />
+<p>
+采集网址任务 :  <%= link_to 'Go', '/admin/wyjob/updatelist', method: :put, target: '_blank'%>
+</p>
+<p>
+采集明细任务 :  <%= link_to 'Go', admin_wyjob_updatedetail_path,  method: :put, target: '_blank'%>
+
+</p>

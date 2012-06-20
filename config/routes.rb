@@ -4,7 +4,9 @@ Playweibo::Application.routes.draw do
   namespace :admin do   
 		get "wyjob/index"
 	  get "wyjob/getlist"
+		put "wyjob/updatelist"
   	get "wyjob/getdetail"
+		put "wyjob/updatedetail"
 		resources :enter_urls 
 	end
 

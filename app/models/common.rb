@@ -1,6 +1,7 @@
 require 'nokogiri'
 require 'open-uri'
 require 'timeout'
+
 module Common
   def safe_open(url, retries = 5, sleep_time = 0.42, headers = {},from_c = "gbk",to_c = "utf-8")
     begin  

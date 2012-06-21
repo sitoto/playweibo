@@ -35,9 +35,7 @@ module JobCai
 	def cai_51job_detail
 		job_list = JobList.criteria.in(:status => [nil, 0]).limit(10)
 		job_list.each do |item|
-p item
 			t = cai_detail(item[:url])
-p t
 			company = Company.new
 			t[:url] = item[:url]
 			company.update_attributes(t)

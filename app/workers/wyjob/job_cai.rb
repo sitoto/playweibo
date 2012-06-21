@@ -119,7 +119,8 @@ p t
     content_item = {} #Company.new 
     begin
       doc = Nokogiri::HTML(html)
-      content_item[:name] = doc.at_css('td.sr_bt').inner_html.strip_all_tag.to_s.strip
+      content_item[:name] = doc.at_css('td.sr_bt').inner_html.strip_all_tag.strip
+			content_item[:name] = content_item[:name].gsub(/ /, '')
 			content_item[:description] = doc.css("table.jobs_1 tr")[1].inner_html.br_to_new_line.strip_tag
 		  content_item[:description]  += doc.at_css("p.txt_font").inner_html.br_to_new_line.strip_tag
 
